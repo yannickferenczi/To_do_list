@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>Todo list</title>
+{% endblock %}
+
+{% block content %}
+    {% for todo in todo_list %}
+        {% if request.user == todo.todolist_owner %}
+            <p>{{ todo.name }}</p>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
